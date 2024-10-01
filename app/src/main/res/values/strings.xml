@@ -12,4 +12,9 @@
     <string name="todo1" translatable="false">TODO</string>
     <string name="todo2" translatable="false">TODO</string>
     <string name="todo3" translatable="false">TODO</string>
+    <string name="description_post_like" translatable="false">Нравится</string>
+    <string name="post_text" translatable="false">Текст</string>
+    <string name="error_empty_content" translatable="false">Content can\'t be empty</string>
+    <string name="menu_edit" translatable="false" >Редактировать</string>
+    <string name="menu_remove" translatable="false" >Удалить</string>
 </resources>

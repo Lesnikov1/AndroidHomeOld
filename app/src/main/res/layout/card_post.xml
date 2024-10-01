@@ -21,7 +21,7 @@
             android:textColor="@color/grey"
             android:textSize="@dimen/text_size"
             app:layout_constraintBottom_toTopOf="@+id/publisher"
-            app:layout_constraintEnd_toStartOf="@id/imageView2"
+            app:layout_constraintEnd_toStartOf="@id/menu"
             app:layout_constraintStart_toEndOf="@+id/imageView5"
             app:layout_constraintTop_toTopOf="@+id/imageView5"
             app:layout_constraintVertical_bias="0.4"
@@ -54,7 +54,7 @@
             app:srcCompat="@drawable/ic_launcher4_foreground" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/menu"
             android:layout_width="@dimen/menu_size"
             android:layout_height="@dimen/menu_size"
             android:adjustViewBounds="false"
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:barrierDirection="bottom"
-            app:constraint_referenced_ids="author,publisher,imageView5,imageView2" />
+            app:constraint_referenced_ids="author,publisher,imageView5,menu" />
 
         <TextView
             android:id="@+id/content"
