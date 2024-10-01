@@ -29,6 +29,10 @@ class PostViewModel : ViewModel() {
                 repository.save(it.copy(content = text))
             }
         }
+        clearEdit()
+    }
+
+    fun clearEdit(){
         edited.value = empty
     }
 

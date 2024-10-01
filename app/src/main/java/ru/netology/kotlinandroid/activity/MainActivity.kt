@@ -40,6 +40,11 @@ class MainActivity : AppCompatActivity() {
             override fun onEdit(post: Post) {
                 viewModel.edit(post)
             }
+
+            override fun onClearEdit() {
+                viewModel.clearEdit()
+            }
+
         }
         )
 
@@ -71,6 +76,7 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             viewModel.applyChangesAndSave(text)
+            binding.viewGroup.visibility = View.GONE
             binding.content.setText("")
             binding.contentEdit.text = ""
             binding.content.clearFocus()
@@ -81,6 +87,7 @@ class MainActivity : AppCompatActivity() {
             binding.viewGroup.visibility = View.GONE
             binding.content.setText("")
             binding.contentEdit.text = ""
+            viewModel.clearEdit()
         }
 
 
