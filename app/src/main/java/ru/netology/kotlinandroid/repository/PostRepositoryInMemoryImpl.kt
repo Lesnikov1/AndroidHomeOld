@@ -20,7 +20,7 @@ class PostRepositoryInMemoryImpl : PostRepository {
         Post(
             id = nextId++,
             author = "Нетология. Университет интернет-профессий будущего",
-            content = "333",
+            content = "333 -> https://netology.ru/profile/program/and-58/lessons/411686/lesson_items/2223559",
             publisher = "21 мая в 18:35",
             likes = 99,
             views = 20,

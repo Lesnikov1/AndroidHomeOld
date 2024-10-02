@@ -63,6 +63,7 @@ class MainActivity : AppCompatActivity() {
             if (it.id != 0L) {
                 binding.viewGroup.visibility = View.VISIBLE
                 binding.content.setText(it.content)
+                binding.content.setSelection(binding.content.text.length)
                 binding.contentEdit.text = it.content
                 binding.content.requestFocus()
             }

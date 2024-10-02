@@ -30,7 +30,6 @@ class PostAdapter(
     private val onInteractionListener: OnInteractionListener
 ) : ListAdapter<Post, PostViewHolder>(PostDiffCallback()) {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
         val binding = CardPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return PostViewHolder(binding, onInteractionListener)
@@ -62,20 +61,12 @@ class PostViewHolder(
             content.text = post.content
             publisher.text = post.publisher
             likes.text = formatValue(post.likes)
-            like.setImageResource(
-                if (post.likedByMe) {
-                    R.drawable.ic_liked
-                } else {
-                    R.drawable.ic_like
-                }
-            )
+            like.isChecked = post.likedByMe
             shares.text = formatValue(post.shares)
             views.text = post.views.toString()
-
             like.setOnClickListener {
                 onInteractionListener.onLike(post)
             }
-
             share.setOnClickListener {
                 onInteractionListener.onShare(post)
             }
