@@ -10,17 +10,14 @@ class PostRepositoryInMemoryImpl : PostRepository {
         Post(
             id = nextId++,
             author = "Нетология. Университет интернет-профессий будущего",
-            content = "111",
-            publisher = "21 мая в 18:34",
-            likes = 1099,
-            views = 20,
-            shares = 990,
+            content = "Привет, это новая Нетология! Когда-то Нетология начиналась с интенсивов по онлайн-маркетингу. Затем появились курсы по дизайну, разработке, аналитике и управлению. Мы растём сами и помогаем расти студентам: от новичков до уверенных профессионалов. Но самое важное остаётся с нами: мы верим, что в каждом уже есть сила, которая заставляет хотеть больше, целиться выше, бежать быстрее. Наша миссия — помочь встать на путь роста и начать цепочку перемен → http://netolo.gy/fyb",
+            publisher = "21 мая в 18:36",
             likedByMe = false
         ),
         Post(
             id = nextId++,
             author = "Нетология. Университет интернет-профессий будущего",
-            content = "333 -> https://netology.ru/profile/program/and-58/lessons/411686/lesson_items/2223559",
+            content = "333 → http://netolo.gy/fyb",
             publisher = "21 мая в 18:35",
             likes = 99,
             views = 20,
@@ -30,20 +27,20 @@ class PostRepositoryInMemoryImpl : PostRepository {
         Post(
             id = nextId++,
             author = "Нетология. Университет интернет-профессий будущего",
-            content = "222",
+            content = "222 → http://netolo.gy/fyb",
             publisher = "21 мая в 18:35",
             likes = 99,
-            views = 20,
+            views = 30,
             shares = 80,
             likedByMe = false
         ),
         Post(
             id = nextId++,
             author = "Нетология. Университет интернет-профессий будущего",
-            content = "444",
+            content = "444 → http://netolo.gy/fyb",
             publisher = "21 мая в 18:35",
             likes = 99,
-            views = 20,
+            views = 40,
             shares = 80,
             likedByMe = false
         ),

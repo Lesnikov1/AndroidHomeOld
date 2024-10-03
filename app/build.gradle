@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+    def mdc_version = "1.12.0"
+
     implementation libs.androidx.core.ktx
     implementation libs.androidx.activity.ktx
     implementation libs.androidx.appcompat

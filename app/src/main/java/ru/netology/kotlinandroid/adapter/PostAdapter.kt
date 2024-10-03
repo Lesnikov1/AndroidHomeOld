@@ -60,10 +60,11 @@ class PostViewHolder(
             author.text = post.author
             content.text = post.content
             publisher.text = post.publisher
-            likes.text = formatValue(post.likes)
             like.isChecked = post.likedByMe
-            shares.text = formatValue(post.shares)
+            like.text = post.likes.toString()
+            share.text = formatValue(post.shares)
             views.text = post.views.toString()
+
             like.setOnClickListener {
                 onInteractionListener.onLike(post)
             }
@@ -79,7 +80,6 @@ class PostViewHolder(
                                 onInteractionListener.onRemove(post)
                                 true
                             }
-
                             R.id.edit -> {
                                 onInteractionListener.onEdit(post)
                                 true
