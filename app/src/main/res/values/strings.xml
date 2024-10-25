@@ -15,6 +15,9 @@
     <string name="description_post_like" translatable="false">Нравится</string>
     <string name="post_text" translatable="false">Текст</string>
     <string name="error_empty_content" translatable="false">Content can\'t be empty</string>
-    <string name="menu_edit" translatable="false" >Редактировать</string>
-    <string name="menu_remove" translatable="false" >Удалить</string>
+    <string name="menu_edit" translatable="false">Редактировать</string>
+    <string name="menu_remove" translatable="false">Удалить</string>
+    <string name="chooser_share_post" translatable="false"> Share post </string>
+    <string name="description_post_save" translatable="false">Save</string>
+    <string name="add_post" translatable="false">Add post</string>
 </resources>

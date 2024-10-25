@@ -63,7 +63,7 @@ class PostViewHolder(
             like.isChecked = post.likedByMe
             like.text = post.likes.toString()
             share.text = formatValue(post.shares)
-            views.text = post.views.toString()
+            view.text = post.views.toString()
 
             like.setOnClickListener {
                 onInteractionListener.onLike(post)
@@ -82,6 +82,7 @@ class PostViewHolder(
                             }
                             R.id.edit -> {
                                 onInteractionListener.onEdit(post)
+
                                 true
                             }
 
