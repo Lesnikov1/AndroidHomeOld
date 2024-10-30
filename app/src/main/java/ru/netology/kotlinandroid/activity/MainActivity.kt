@@ -1,12 +1,10 @@
 package ru.netology.kotlinandroid.activity
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.view.animation.AlphaAnimation
 import android.widget.Toast
-import androidx.activity.result.launch
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import ru.netology.kotlinandroid.R
@@ -20,13 +18,21 @@ import ru.netology.nmedia.activity.NewPostResultContract
 
 class MainActivity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val viewModel: PostViewModel by viewModels()
         val adapter = PostAdapter(object : OnInteractionListener {
+
+            override fun onVideo(post: Post) {
+                val videoUrl = post.video
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(videoUrl))
+                startActivity(intent)
+            }
 
             override fun onLike(post: Post) {
                 viewModel.like(post.id)
@@ -38,7 +44,6 @@ class MainActivity : AppCompatActivity() {
                     putExtra(Intent.EXTRA_TEXT, post.content)
                     type = "text/plain"
                 }
-
                 val shareIntent =
                     Intent.createChooser(intent, getString(R.string.chooser_share_post))
                 startActivity(shareIntent)
@@ -49,13 +54,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onEdit(post: Post) {
-                viewModel.edited
-                val intent = Intent().apply {
-                    putExtra(Intent.EXTRA_TEXT, post.content)
-                }
-                newPostLauncher.launch()
+                newPostLauncher.launch(post.content)
             }
-
 
             override fun onClearEdit() {
                 viewModel.clearEdit()
@@ -117,11 +117,9 @@ class MainActivity : AppCompatActivity() {
             viewModel.changeContent(result)
             viewModel.save()
 
-
         }
         binding.fab.setOnClickListener {
-            newPostLauncher.launch()
+            newPostLauncher.launch(null)
         }
-
     }
 }

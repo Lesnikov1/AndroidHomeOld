@@ -1,7 +1,5 @@
 package ru.netology.kotlinandroid.viewmodel
 
-import android.view.View
-import androidx.constraintlayout.widget.Group
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ru.netology.kotlinandroid.dto.Post
@@ -14,7 +12,8 @@ private val empty = Post(
     author = "",
     content = "",
     publisher = "",
-    likedByMe = false
+    likedByMe = false,
+    video = null
 )
 
 class PostViewModel : ViewModel() {
@@ -32,12 +31,8 @@ class PostViewModel : ViewModel() {
         clearEdit()
     }
 
-    fun clearEdit(){
+    fun clearEdit() {
         edited.value = empty
-    }
-
-    fun edit(post: Post) {
-        edited.value = post
     }
 
     fun like(id: Long) = repository.like(id)

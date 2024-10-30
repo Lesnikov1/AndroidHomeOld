@@ -17,12 +17,13 @@ class PostRepositoryInMemoryImpl : PostRepository {
         Post(
             id = nextId++,
             author = "Нетология. Университет интернет-профессий будущего",
-            content = "333 → http://netolo.gy/fyb",
+            content = "",
             publisher = "21 мая в 18:35",
             likes = 99,
             views = 20,
             shares = 80,
-            likedByMe = false
+            likedByMe = false,
+            video = "https://www.youtube.com/watch?v=HmjKmoct3Ws"
         ),
         Post(
             id = nextId++,
@@ -43,11 +44,15 @@ class PostRepositoryInMemoryImpl : PostRepository {
             views = 40,
             shares = 80,
             likedByMe = false
-        ),
+        )
     ).reversed()
+
+
     private val data = MutableLiveData(posts)
 
+
     override fun getAll(): LiveData<List<Post>> = data
+
 
     override fun like(id: Long) {
         posts = posts.map {
